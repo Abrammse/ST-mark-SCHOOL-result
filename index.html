@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نتيجة مدرسة القديس مار مرقس الرسول الألحان </title>
+    <meta name="description" content="استعلم عن نتيجتك في مدرسة الألحان الكنسية - تقديرات الترم الثانى 2025م - 2026م">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;400;600;700;900&family=Outfit:wght@300;500;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --gold-50: #fffbeb;
+            --gold-100: #fef3c7;
+            --gold-400: #fbbf24;
+            --gold-500: #f59e0b;
+            --gold-600: #d97706;
+            --slate-50: #f8fafc;
+            --slate-100: #f1f5f9;
+            --slate-900: #0f172a;
+        }
+
+        .font-outfit {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .font-cairo {
+            font-family: 'Cairo', sans-serif;
+        }
+
+        .certificate-bg {
+            background-image: radial-gradient(circle at 2px 2px, rgba(212, 175, 55, 0.05) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+
+        .result-card {
+            background: linear-gradient(135deg, #ffffff 0%, #fffdf5 100%);
+            box-shadow: 0 40px 100px -20px rgba(15, 23, 42, 0.1);
+        }
+
+        .top-badge {
+            background: linear-gradient(45deg, #d97706, #f59e0b);
+            color: white;
+            box-shadow: 0 10px 20px -5px rgba(217, 119, 6, 0.3);
+        }
+
+        @keyframes float-slow {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .float-anim {
+            animation: float-slow 6s ease-in-out infinite;
+        }
+
+        .mesh-bg {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            overflow: hidden;
+            background: #f8fafc;
+        }
+
+        .mesh-circle {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+        }
+
+        .mesh-1 {
+            width: 600px;
+            height: 600px;
+            background: #fef3c7;
+            top: -200px;
+            right: -100px;
+            animation: float 20s infinite alternate;
+        }
+
+        .mesh-2 {
+            width: 400px;
+            height: 400px;
+            background: #dcfce7;
+            bottom: -100px;
+            left: -100px;
+            animation: float 25s infinite alternate-reverse;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(30px, 50px);
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            html, body {
+                height: 100vh !important;
+                max-height: 100vh !important;
+                overflow: hidden !important; 
+                background: white !important; 
+                -webkit-print-color-adjust: exact; 
+                print-color-adjust: exact; 
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            body > * { display: none !important; }
+            
+            #resultSection { 
+                display: block !important; 
+                width: 100% !important;
+                height: 100vh !important;
+                margin: 0 !important;
+                padding: 10mm 20mm !important; 
+                box-sizing: border-box;
+            }
+            
+            #resultCard { 
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: space-between !important;
+                border: 2px solid #fde68a !important; 
+                box-shadow: none !important; 
+                margin: 0 auto !important; 
+                padding: 1.5rem !important;
+                width: 100% !important; 
+                height: 100% !important;
+                border-radius: 20px !important;
+                transform: none !important;
+            }
+
+            /* Natural spacing for a bold, large look */
+            #resultCard > div { padding-top: 15px !important; padding-bottom: 15px !important; }
+            #resultCard h3 { margin-bottom: 8px !important; line-height: 1.2 !important; }
+            #resultCard img { max-height: 100px !important; width: auto !important; }
+            #subjectsGrid { gap: 15px !important; margin-bottom: 10px !important; }
+            #subjectsGrid > div { padding: 15px !important; break-inside: avoid; border: 1px solid #fde68a !important; }
+            
+            .no-print, #printBtn, footer, nav, .hero-section, #topStudentsSection { 
+                display: none !important; 
+            }
+
+            @page {
+                size: A4 portrait;
+                margin: 0;
+            }
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { cairo: ['Cairo', 'sans-serif'], outfit: ['Outfit', 'sans-serif'] },
+                    colors: {
+                        gold: { 50: '#fffbeb', 100: '#fef3c7', 200: '#fde68a', 300: '#fcd34d', 400: '#fbbf24', 500: '#f59e0b', 600: '#d97706', 700: '#b45309', 800: '#92400e', 900: '#78350f' }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-cairo bg-[#f8fafc] text-slate-900 min-h-screen overflow-x-hidden">
+
+    <div class="mesh-bg">
+        <div class="mesh-circle mesh-1"></div>
+        <div class="mesh-circle mesh-2"></div>
+    </div>
+    <div class="fixed inset-0 z-0 pointer-events-none" id="bg-particles"></div>
+
+    <!-- Navbar -->
+    <div class="fixed top-4 left-0 right-0 z-50 px-2 md:px-6">
+        <nav
+            class="max-w-5xl mx-auto bg-white/90 backdrop-blur-3xl border border-white/50 rounded-full shadow-2xl py-3 md:py-4 px-6 md:px-10 flex items-center justify-between">
+            <div class="flex items-center gap-3 md:gap-4">
+                <img src="images/church_logo.png" alt="Church" class="w-10 h-10 md:w-14 md:h-14 object-contain">
+                <p class="hidden sm:block text-[11px] md:text-[13px] font-black leading-tight">كنيسة القديسة العذراء
+                    مريم والقديس مارمرقس الرسول <br><span class="text-gold-600 font-bold">الطوابق - فيصل</span></p>
+            </div>
+            <div class="flex items-center gap-3 md:gap-4 text-left">
+                <img src="images/school_logo.png" alt="School" class="w-10 h-10 md:w-14 md:h-14 object-contain">
+                <p class="hidden sm:block text-[12px] md:text-[15px] font-black">مدرسة القديس مارمرقس الألحان</p>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative pt-5 pb-20 px-6 hero-section">
+        <div class="max-w-6xl mx-auto text-center relative z-10">
+            <!-- Hero Section -->
+            <section class="relative pt-32 md:pt-48 pb-16 px-4 md:px-6 hero-section">
+                <div class="max-w-6xl mx-auto text-center relative z-10">
+                    <!-- Bible Verse -->
+                    <div class="mb-8 md:mb-12 flex flex-col items-center gap-2 float-anim px-2">
+                        <p class="text-lg md:text-2xl font-bold text-slate-500/60 italic font-cairo">
+                            "أَسْتَطِيعُ كُلَّ شَيْءٍ فِي الْمَسِيحِ الَّذِي يُقَوِّينِي"
+                        </p>
+                        <span class="text-gold-600 font-black text-[10px] md:text-xs tracking-widest">( فِيلِبِّي ٤:١٣
+                            )</span>
+                    </div>
+
+                    <h1 class="text-4xl md:text-5xl font-black text-slate-900 mb-6 tracking-tighter leading-tight">
+                        استعلم عن <br class="md:hidden">
+                        <span class="bg-gradient-to-r from-gold-500 to-gold-600 bg-clip-text text-transparent">نتيجتك
+                            الآن</span>
+                    </h1>
+
+                    <!-- Search Box -->
+                    <div class="max-w-3xl mx-auto mt-10 md:mt-16 relative z-20">
+                        <div
+                            class="bg-white p-1.5 md:p-2 rounded-[1.5rem] md:rounded-[2.5rem] shadow-2xl border border-white flex flex-col md:flex-row items-center gap-2">
+                            <div class="flex-1 flex items-center px-4 md:px-6 gap-3 md:gap-4 w-full">
+                                <span class="text-xl md:text-2xl">👤</span>
+                                <input type="text" id="searchInput" placeholder="اكتب اسمك بالكامل هنا..."
+                                    class="flex-1 bg-transparent py-3 md:py-4 text-base md:text-xl text-slate-900 placeholder-slate-300 outline-none font-bold"
+                                    autocomplete="off">
+                            </div>
+                            <button id="searchBtn"
+                                class="w-full md:w-auto px-8 md:px-10 py-4 md:py-5 bg-slate-900 text-white font-black rounded-xl md:rounded-[2rem] hover:bg-gold-600 transition-all duration-300 shadow-xl active:scale-95 text-sm md:text-base">
+                                بحث
+                            </button>
+                        </div>
+                        <p class="mt-4 md:mt-6 text-slate-400 text-[10px] md:text-sm font-bold animate-pulse px-2">
+                            💡 يرجى كتابة اسمك بالكامل كما هو مسجل فى مكتب المدرسة لتظهر نتيجتك بدقة
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <!-- Top Students Section -->
+    <section id="topStudentsSection" class="relative z-10 px-4 md:px-6 pb-24">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col items-center mb-12 md:mb-16">
+                <span
+                    class="px-4 py-1.5 rounded-full bg-gold-100 text-gold-700 text-[10px] font-black mb-4 tracking-widest uppercase">Rankings</span>
+                <h3 class="text-3xl md:text-4xl font-black text-slate-900">أوائل المراحل الدراسية</h3>
+                <div class="w-16 h-1 bg-gold-500 mt-4 rounded-full"></div>
+            </div>
+            <div id="topStudentsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Result Section -->
+    <section id="resultSection" class="relative z-10 px-4 md:px-6 pb-24 hidden">
+        <div class="max-w-4xl mx-auto">
+            <div id="resultCard"
+                class="result-card relative overflow-hidden rounded-[1.5rem] md:rounded-[2.5rem] border-4 border-double border-gold-200/50 certificate-bg">
+                <!-- Header Content -->
+                <div class="px-6 md:px-16 pt-10 md:pt-16 pb-8 md:pb-12 text-center border-b border-gold-100 relative">
+                    <!-- School Logo Watermark -->
+                    <div
+                        class="absolute inset-0 flex items-center justify-center opacity-[0.03] pointer-events-none overflow-hidden">
+                        <img src="images/school_logo.png" class="w-[30rem] h-[30rem] object-contain rotate-12" alt="">
+                    </div>
+
+                    <div class="flex justify-between items-start mb-8 md:mb-12 relative z-10">
+                        <img src="images/church_logo.png" class="w-16 h-16 md:w-24 md:h-24 object-contain" alt="">
+                        <div class="text-center pt-2">
+                            <p
+                                class="text-gold-600 font-black tracking-[0.2em] md:tracking-[0.3em] text-[8px] md:text-xs mb-1 md:mb-2 uppercase">
+                                Official Certificate</p>
+                            <h2 class="text-xl md:text-2xl font-black text-slate-900">شهادة تقدير ونجاح</h2>
+                        </div>
+                        <img src="images/school_logo.png" class="w-16 h-16 md:w-24 md:h-24 object-contain" alt="">
+                    </div>
+
+                    <p class="text-slate-500 text-sm font-bold mb-3 md:mb-4 relative z-10">تشهد مدرسة الألحان الكنسية
+                        بأن الطالب:</p>
+                    <h3 id="studentName"
+                        class="text-3xl md:text-6xl font-black text-slate-900 mb-4 md:mb-6 tracking-tight relative z-10">
+                    </h3>
+                    <p class="text-slate-400 text-xs md:text-base font-bold relative z-10">قد اجتاز تقييمات <span
+                            id="studentClass" class="text-gold-600"></span> بنجاح</p>
+                </div>
+
+                <!-- Scores -->
+                <div class="px-4 md:px-16 py-8 md:py-12 relative z-10">
+                    <div id="subjectsGrid" class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6">/10</div>
+                </div>
+
+                <!-- Footer Summary -->
+                <div class="px-4 md:px-16 pb-12 md:pb-16 relative z-10">
+                    <div
+                        class="bg-slate-900 rounded-[1.5rem] md:rounded-[2rem] p-6 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8 text-white">
+                        <div class="text-center md:text-right">
+                            <p class="text-slate-400 text-[10px] font-bold mb-1 uppercase tracking-widest">المجموع
+                                النهائي</p>
+                            <p id="totalScore" class="text-4xl md:text-6xl font-black"></p>
+                        </div>
+                        <div class="text-center md:text-right">
+                            <p class="text-slate-400 text-[10px] font-bold mb-1 uppercase tracking-widest">التقدير العام
+                            </p>
+                            <div id="overallGrade" class="text-2xl md:text-4xl font-black"></div>
+                        </div>
+                    </div>
+
+                    <div class="mt-12 md:mt-16 flex justify-between items-end px-2 md:px-0">
+                        <div class="text-center relative">
+                            <img src="images/school_logo.png"
+                                class="w-20 md:w-28 h-20 md:h-28 object-contain opacity-70 absolute -top-12 md:-top-20 left-1/2 -translate-x-1/2"
+                                alt="Church Seal">
+                            <div class="w-24 md:w-40 h-px bg-slate-900/20 mb-2 mx-auto relative z-10"></div>
+                            <p
+                                class="text-[8px] md:text-[10px] font-black text-slate-400 relative z-10 uppercase tracking-widest">
+                                ختم المدرسة </p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-sm md:text-lg font-black text-slate-900 mb-1">القس بولا خليل</p>
+                            <div class="w-24 md:w-40 h-px bg-slate-900/20 mb-2 mx-auto"></div>
+                            <p class="text-[8px] md:text-[10px] font-black text-slate-400 uppercase tracking-widest">
+                                مدير المدرسة</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 flex gap-4 no-print flex-col md:flex-row">
+                <button onclick="downloadPDF()"
+                    class="flex-1 py-5 rounded-2xl bg-gradient-to-r from-gold-500 to-gold-600 text-white font-black hover:shadow-lg hover:-translate-y-1 transition-all shadow-md">تحميل
+                    كـ PDF 📥</button>
+                <button onclick="searchAgain()"
+                    class="flex-1 py-5 rounded-2xl bg-white border border-slate-200 font-black hover:bg-slate-50 transition-all shadow-sm">بحث
+                    جديد 🔍</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Not Found Section -->
+    <section id="notFoundSection" class="relative z-10 px-6 pb-24 hidden">
+        <div class="max-w-md mx-auto text-center p-12 bg-white rounded-[2rem] shadow-xl border border-red-50">
+            <div class="w-20 h-20 bg-red-50 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl">⚠️
+            </div>
+            <h3 class="text-2xl font-black text-red-600 mb-2">الاسم غير موجود</h3>
+            <p class="text-slate-400 font-bold mb-8">يرجى التأكد من كتابة الاسم بالكامل وبشكل صحيح</p>
+            <button onclick="searchAgain()" class="w-full py-4 bg-slate-900 text-white rounded-xl font-black">حاول مرة
+                أخرى</button>
+        </div>
+    </section>
+
+    <!-- VERY HIDDEN Special Print Certificate Template -->
+    <div id="specialPrintContainer" class="hidden">
+        <div id="specialPrintCertificate" class="bg-white relative overflow-hidden"
+            style="width: 297mm; height: 210mm; font-family: 'Cairo', sans-serif;">
+            <!-- Outer Gold Border -->
+            <div style="position: absolute; inset: 15mm; border: 8px solid #c89b3c; padding: 4px;">
+                <!-- Inner Gold Border -->
+                <div
+                    style="position: relative; width: 100%; height: 100%; border: 2px solid #c89b3c; display: flex; flex-direction: column; align-items: center; padding-top: 30mm;">
+
+                    <!-- Logos -->
+                    <img src="images/church_logo.png"
+                        style="position: absolute; top: 10mm; left: 10mm; width: 35mm; height: 35mm; object-fit: contain;"
+                        alt="">
+                    <img src="images/school_logo.png"
+                        style="position: absolute; top: 10mm; right: 10mm; width: 35mm; height: 35mm; object-fit: contain;"
+                        alt="">
+
+                    <!-- Top Bible Verse -->
+                    <p
+                        style="font-size: 24px; font-weight: 900; line-height: 1.2; text-align: center; margin-bottom: 5px;">
+                        أُخَبِّرُ بِاسْمِكَ إِخْوَتِي، وَفِي وَسَطِ الْكَنِيسَةِ أُسَبِّحُكَ</p>
+                    <p style="font-size: 16px; margin-bottom: 25px;">(مز 22:22)</p>
+
+                    <!-- Red Title Ribbon -->
+                    <div
+                        style="background-color: #7b0d0c; border: 3px solid #c89b3c; color: white; padding: 10px 100px; font-size: 55px; font-weight: 900; margin-bottom: 35px; box-shadow: 0 10px 20px rgba(0,0,0,0.2);">
+                        شــهـــــادة تــقـــديـــــر
+                    </div>
+
+                    <!-- School Intro -->
+                    <h2 style="font-size: 32px; font-weight: 900; margin-bottom: 10px; color: #111;">تشهد مدرسة القديس
+                        مارمرقس الرسول للألحان</h2>
+                    <h3 style="font-size: 26px; font-weight: 900; margin-bottom: 40px; color: #333;">بكنيسة القديسة
+                        العذراء مريم والقديس مار مرقس الرسول - الطوابق - فيصل</h3>
+
+                    <!-- Student Name -->
+                    <div style="display: flex; align-items: baseline; gap: 15px; margin-bottom: 30px;">
+                        <span style="font-size: 38px; font-weight: bold; color: #000;">أن الإبن المبارك:</span>
+                        <span id="pName" style="font-size: 65px; font-weight: 900; color: #a91c1c;"></span>
+                    </div>
+
+                    <!-- Grade and Class -->
+                    <div
+                        style="display: flex; align-items: baseline; justify-content: center; gap: 40px; margin-bottom: 40px;">
+                        <div>
+                            <span style="font-size: 32px; font-weight: bold;">قد حصل على تقدير: </span>
+                            <span id="pGrade" style="font-size: 60px; font-weight: 900; color: #a91c1c;"></span>
+                        </div>
+                        <div>
+                            <span style="font-size: 24px; font-weight: bold;">بمرحلة: </span>
+                            <span id="pClass" style="font-size: 30px; font-weight: bold;"></span>
+                        </div>
+                    </div>
+
+                    <!-- Footer Message -->
+                    <p style="font-size: 26px; font-weight: bold; margin-bottom: 5px; color: #111;">لتفوقه في جميع
+                        المواد الدراسية هذا العام 1441ش - 2025م</p>
+                    <p style="font-size: 26px; font-weight: bold; color: #111;">طالبين من الرب دوام التقدم والنجاح</p>
+
+                    <!-- Signatures -->
+                    <div style="position: absolute; bottom: 20mm; left: 30mm; text-align: center;">
+                        <p style="font-size: 22px; font-weight: bold;">مدرسة القديس مارقس للالحان</p>
+                    </div>
+
+                    <div style="position: absolute; bottom: 20mm; right: 30mm; text-align: center;">
+                        <p style="font-size: 22px; font-weight: bold; margin-bottom: 10px;">الكاهن المسئول</p>
+                        <p style="font-size: 28px; font-weight: 900; color: #1e3a8a;">القس بولا خليل</p>
+                    </div>
+
+                    <!-- Golden Bottom Badge -->
+                    <div
+                        style="position: absolute; bottom: -25mm; width: 60mm; height: 60mm; background-color: #c89b3c; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 20px rgba(0,0,0,0.3);">
+                        <div style="width: 50mm; height: 50mm; border: 2px dashed white; border-radius: 50%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dark bottom wave effect (using CSS) -->
+            <div
+                style="position: absolute; bottom: 0; left: 0; right: 0; height: 40mm; background: linear-gradient(to top, rgba(30,30,30,1), transparent); pointer-events: none;">
+            </div>
+            <div
+                style="position: absolute; bottom: -50mm; left: -10%; right: -10%; height: 75mm; background-color: #1a1a1a; border-radius: 50% 50% 0 0; z-index: 0;">
+            </div>
+            <div
+                style="position: absolute; bottom: -50mm; left: -5%; right: -5%; height: 70mm; background-color: #2b2b2b; border-radius: 50% 50% 0 0; z-index: 1;">
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-12 text-center opacity-40 border-t border-slate-100 mt-20">
+        <p class="text-xs font-bold"> مدرسة القديس مارمرقس الرسول للالحان © <span id="currentYear"></span></p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
